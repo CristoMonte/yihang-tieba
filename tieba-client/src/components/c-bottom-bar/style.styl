@@ -1,0 +1,27 @@
+@import "../../common/style/mixin.styl"
+@import "../../common/style/variables.styl"
+
+// 定义 或 重载 变量
+$bar-color = $bar-white  // 底栏的背景颜色
+$bar-top-border-color = $line-1px  // 底栏上边线颜色
+$bottom-bar-height = $bar-height // 底栏高度
+
+.c-bottom-bar
+  posf-bottom-full()
+  z-index $c-bottom-bar-z
+  height $bottom-bar-height
+  background-color $bar-color
+  &:after
+    content: ' '
+    display: block
+    position: absolute
+    left: 0
+    top: 0
+    right: 0
+    border-top: 1px solid $bar-top-border-color
+  ul
+    height: 100%
+    flex-center()
+    justify-content space-around
+    li
+      height: 100%

@@ -1,0 +1,40 @@
+transition(
+  enter-active-class="animated fadeIn",
+  leave-active-class="animated fadeOut"
+)
+  //- @click="closeShowStart",
+  div.p-logup
+    div.logup-cont
+      img.logup-bg(
+        src="./start-ui-bg-2.png"
+      )
+      div.logup-box(
+        @keyup.enter.stop="submit"
+      )
+        input.logup-user(
+          type="text",
+          @input.stop="checkUser",
+          :placeholder="unp",
+          v-model="username",
+          :style="{color: userAccess ? '#3388ff' : '#777'}"
+        )
+        i.icon-confirm(
+          :style="{color: userAccess ? '#3388ff' : '#ccc'}"
+        )
+      input.logup-text(
+        type="password",
+        :placeholder="pwp",
+        v-model="password",
+      )
+      input.logup-text(
+        type="password",
+        :placeholder="rpwp",
+        v-model="repassword",
+      )
+      button.logup-submit(
+        ref="logupSubmit",
+        @click.stop="submit"
+      ) 注册
+      a.goto-login(
+        @click.stop="$router.replace('/login')"
+      ) 我有账号，想直接登录

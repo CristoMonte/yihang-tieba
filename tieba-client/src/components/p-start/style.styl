@@ -1,0 +1,77 @@
+@import "../../common/style/mixin.styl"
+@import "../../common/style/variables.styl"
+
+// 定义 或 重载 变量
+
+@keyframes touchGo {
+  0% {
+    opacity 0
+    left px(300)
+  }
+  30% {
+    opacity 0
+    left px(300)
+  }
+  60% {
+    opacity 1
+  }
+  70% {
+    opacity 1
+  }
+  100% {
+    opacity 0
+    left px(450)
+  }
+}
+
+.p-start
+  posf-full()
+  z-index $p-start-z
+  overflow hidden
+  background-color rgba(255,255,255,.95)
+  color #444
+  .start-cont
+    width 500%
+    height 100%
+    clearfix()
+    .start-page
+      float left
+      width 20%
+      height 100%
+      background-color #eef4ff
+      position relative
+      df-center()
+      flex-flow column nowrap
+      div
+        font-size px(32)
+        margin-top px(40)
+      &.start-page-1
+        background-color #3388ff
+        color #fff
+        &:before
+          border-color #fff
+        img
+          width px(180)
+      &.start-page-2
+        background-color #eff
+        color #f66
+      &.start-page-3
+        background-color #ffe
+        color #f66
+      &.start-page-4
+        background-color #efe
+        color #f66
+      &.start-page-5
+        background-color #fef
+        color #f66
+      &:before
+        content ''
+        position absolute
+        bottom px(100)
+        width px(30)
+        height px(30)
+        border px(8) solid #f66
+        border-top transparent
+        border-left transparent
+        transform rotate(-45deg)
+        animation touchGo 3s ease-in-out infinite

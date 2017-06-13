@@ -1,0 +1,8 @@
+div.p-home
+  div.home-top-bar.bottom-1px
+    i.home-top-bar__title.icon-post-bar(@click="openShowAuthor")
+    i.icon-game-handle
+    router-link(to="/search-post")
+      i.icon-search
+  div.body-cont
+    c-home-post

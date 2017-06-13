@@ -1,0 +1,76 @@
+div.p-know
+  header.search-box
+    i.icon-search
+    input.search-text(
+      type="search",
+      placeholder="有了疑惑？ 问一问",
+      ref="searchText",
+      v-model="searchMsg",
+      @input.stop="searchPrompt",
+      @keyup.enter="submit();focusOff()",
+      @focus.self="focusOn"
+    )
+    button.search-btn(
+      v-if="searchMsg",
+      @click="clearSearchMsg",
+      @focus.self="focusOff"
+    ) 取消
+  
+  transition(
+    enter-active-class="animated slideInLeft",
+    leave-active-class="animated fadeOut"
+  )
+    div.search-wrapper(
+      v-show="focus",
+      @touchstart.self="focusOff"
+    )
+      div.search-cont
+
+        //- 实时搜索反馈
+        section.search-prompt(
+          v-show="prompt[0]",
+          ref="searchPrompt"
+        )
+          div.search-prompt-cont
+            div.search-prompt-item(
+              v-for="(item,index) of prompt",
+              @click="addTextPrompt(index)",
+              ref="touchCell_3"
+            )
+              span.search-prompt-index {{index+1}}
+              span.search-prompt-text {{item}}
+        
+        //- 搜索历史记录
+        section.search-history.bottom-1px(
+          v-show="history[0]"
+        )
+          div.search-history__title.bottom-1px 
+            h2.search-history-title-text 搜索历史
+            span.search-history-num {{history.length}} 
+          ul.search-history__items.bottom-1px(ref="searchHistoryWrapper")
+            div.search-history__items-cont
+              li.search-history__item(
+                v-for="(item,index) of history"
+                ref="touchCell"
+              )
+                span.search-history__item-index {{index+1}}
+                span.search-history__item-text(
+                  @click="addText(index)"
+                ) {{item}}
+                i.icon-close(
+                  @click="remove(index)"
+                )
+          button.clear-search-history(
+            ref="touchCell_2",
+            @click="clear"
+          ) 清空历史纪录
+
+  div.result-wrapper(ref="resultWrapper")
+    ul.cells.result-cont
+      li.cell.result-item(
+        v-for="item of result",
+        ref="touchCell_1",
+        v-html="item"
+      )
+      
+      

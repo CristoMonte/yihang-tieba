@@ -1,0 +1,80 @@
+transition(
+  enter-active-class="animated fadeIn",
+  leave-active-class="animated fadeOut"
+)
+  div.p-bar-detail
+    header.bar-detail-top-bar(
+      :style="{'background-color':header.bgc}"
+    )
+      i.bar-top-title.icon-left-arrow(
+        @click="$router.go(-1)"
+      )
+      i.icon-dirft-bottle
+      i.icon-setting
+
+      button.add-post.icon-add(
+        @click.stop="onCreatePost"
+      )
+
+    transition(
+      enter-active-class="animated fadeIn",
+      leave-active-class="animated fadeOut"
+    )
+      div.create-post(
+        v-show="isShowCreatePost",
+        @click.stop="offCreatePost"
+      )
+
+    transition(
+      enter-active-class="animated slideInUp",
+      leave-active-class="animated slideOutDown"
+    )
+      div.create-post-cont(
+        v-show="isShowCreatePost"
+      )
+        h1 发贴
+        textarea.post-title(
+          type="text",
+          autofocus="autofocus"
+          placeholder="贴子标题",
+          v-model="title"
+        )
+        textarea.post-desc(
+          type="text",
+          placeholder="贴子内容",
+          v-model="content"
+        )
+        button.post-submit(
+          ref="editSubmit",
+          @click.self.stop="editSubmit"
+        ) 确认创建
+
+    div.body-wrapper(ref="barWrapper")
+      div.body-cont
+
+        section.bar-header(
+          :style="{'background-color': bar.bg}"
+        )
+          i.bar-icon
+            img(
+              ref="imgErr_1",
+              :src="bar.icon"
+            )
+          div.bar-header-right
+            h1.bar-name {{bar.name}}
+            div.bar-info 关注: {{bar.focusNum}}  贴子: {{bar.postNum}}
+            button.bar-level(v-if="isFollowing") 等级 1
+            button.bar-sign(v-if="isFollowing") 签到 +
+            button.bar-add(
+              @click="toggleFollow"
+            ) {{isFollowing ? '取消关注' : '关注'}}
+
+        div.bar-desc(
+          v-if="bar.description"
+        ) {{bar.description}}
+
+        a-home-post-cell(
+          v-if="posts.length"
+          :posts="posts",
+          @update="updateScroll"
+        )

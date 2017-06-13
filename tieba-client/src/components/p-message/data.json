@@ -1,0 +1,80 @@
+[
+  {
+    "icon": "icon-reply-msg",
+    "iconColor": "#269ff4",
+    "title": "回复我的",
+    "arrow": true
+  },
+  {
+    "icon": "icon-user-at",
+    "iconColor": "#ff525c",
+    "title": "@我的",
+    "arrow": true
+  },
+  {
+    "icon": "icon-unknown-user",
+    "iconColor": "#269ff4",
+    "title": "陌生人的消息",
+    "time": "10天前",
+    "msg": "圣1465708113:高频彩票 玩NBA足球就是好 快来一起玩耍吧"
+  },
+  {
+    "icon": "icon-warn-text",
+    "iconColor": "#0dc244",
+    "title": "吧广播",
+    "time": "10天前",
+    "msg": "内涵吧:五月第二轮招募小吧主"
+  },
+  {
+    "icon": "icon-reply-msg",
+    "iconColor": "#269ff4",
+    "title": "回复我的",
+    "arrow": true
+  },
+  {
+    "icon": "icon-user-at",
+    "iconColor": "#ff525c",
+    "title": "@我的",
+    "arrow": true
+  },
+  {
+    "icon": "icon-unknown-user",
+    "iconColor": "#269ff4",
+    "title": "陌生人的消息",
+    "time": "10天前",
+    "msg": "圣1465708113:高频彩票 玩NBA足球就是好 快来一起玩耍吧"
+  },
+  {
+    "icon": "icon-warn-text",
+    "iconColor": "#0dc244",
+    "title": "吧广播",
+    "time": "10天前",
+    "msg": "内涵吧:五月第二轮招募小吧主"
+  },
+  {
+    "icon": "icon-reply-msg",
+    "iconColor": "#269ff4",
+    "title": "回复我的",
+    "arrow": true
+  },
+  {
+    "icon": "icon-user-at",
+    "iconColor": "#ff525c",
+    "title": "@我的",
+    "arrow": true
+  },
+  {
+    "icon": "icon-unknown-user",
+    "iconColor": "#269ff4",
+    "title": "陌生人的消息",
+    "time": "10天前",
+    "msg": "圣1465708113:高频彩票 玩NBA足球就是好 快来一起玩耍吧"
+  },
+  {
+    "icon": "icon-warn-text",
+    "iconColor": "#0dc244",
+    "title": "吧广播",
+    "time": "10天前",
+    "msg": "内涵吧:五月第二轮招募小吧主"
+  }
+]

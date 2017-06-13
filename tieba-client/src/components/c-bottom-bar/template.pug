@@ -1,0 +1,11 @@
+nav.c-bottom-bar.top-1px
+  ul
+    li(
+      v-for="(item,index) of barCellList", 
+      :key="item.path", 
+      @click.stop.prevent="setActionBarIndex(index)"
+    )
+      a-bottom-bar-cell(
+        :barCell="item", 
+        :barIndex="index"
+      )

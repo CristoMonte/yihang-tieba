@@ -1,0 +1,62 @@
+@import "../../common/style/mixin.styl"
+@import "../../common/style/variables.styl"
+
+// 定义 或 重载 变量
+$input-layer-bg = $layer-black-8
+
+// this.$route.query.num
+
+.a-input-box
+  posf-full()
+  z-index $a-input-box-z
+  overflow hidden
+  background-color $input-layer-bg
+  .input-cont
+    posa-top-full()
+    box-sizing border-box
+    padding px(80) px(40)
+    background-color #fff
+    .input-title
+      position relative
+      padding px(10) px(32)
+      margin 0 px(0) px(32)
+      font-size px(32)
+      height px(40)
+      color #3388ff
+      &:before
+        content: ''
+        position absolute
+        left 0
+        top 0
+        bottom 0
+        width px(14)
+        background-color #3388ff
+    .input-text
+      width 100%
+      border none
+      padding px(20)
+      border-radius px(6)
+      background-color #f4f4f4
+      font-size px(28)
+      line-height px(40)
+      box-sizing border-box
+      transition all 0.3s ease-in-out
+      resize none
+      &:focus
+        background-color #6af
+        color #fff
+    .input-text:focus::-webkit-input-placeholder
+      color #fff
+    .edit-btns
+      text-align right
+      .edit-btn
+        font-size px(32)
+        height px(72)
+        color #fff
+        background-color #38f
+        border-radius px(4)
+        padding 0 px(60)
+        margin-top px(40)
+        margin-right px(40)
+        &.edit-btn--touch
+          background-color #6af

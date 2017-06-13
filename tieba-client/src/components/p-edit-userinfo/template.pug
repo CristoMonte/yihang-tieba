@@ -1,0 +1,47 @@
+transition(
+  enter-active-class="animated slideInRight",
+  leave-active-class="animated fadeOut"
+)
+  div.p-edit-userinfo
+    header.edit-userinfo-top-bar(
+      :style="{'background-color':header.bgc}"
+    )
+      span.edit-userinfo-top-title(@click="$router.go(-1)")
+        i.icon-left-arrow  回退
+    div.body-wrapper(ref="editUserinfoWrapper")
+      div.body-cont
+        
+        div.user-base-info
+          i.user-avatar
+            img(
+              :src="userinfo[4] && userinfo[4].msg",
+              ref="imgErr"
+            )
+          button.distory(
+            @click="distoryUser"
+          ) 注销
+
+        ul.cells.fn-lists
+          li.cell.fn-list(
+            v-for="(item, index) of userinfo",
+            :key="index",
+            ref="touchCell",
+            @click="editUserinfoCell(index)"
+          )
+            i.fn-icon(
+              :class="item.icon",
+              :style="{color: item.iconColor}"
+            )
+            span.fn-text {{item.text}}
+            div.fn-msg(v-if="item.msg") {{item.msg}}
+        
+        input.login-text(
+          type="password",
+          :placeholder="pwp",
+          v-model="password",
+        )
+        
+        button.edit-submit(
+          ref="editSubmit",
+          @click.self.stop.prevent="editSubmit"
+        ) 确认修改

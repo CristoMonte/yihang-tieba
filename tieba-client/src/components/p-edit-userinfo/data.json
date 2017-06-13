@@ -1,0 +1,47 @@
+{
+  "upLowColor": {
+    "r": 255,
+    "g": 90,
+    "b": 90,
+    "a": 1
+  },
+  "defaultColor": {
+    "r": 255,
+    "g": 255,
+    "b": 255,
+    "a": 0
+  },
+  "downLowColor": {
+    "r": 52,
+    "g": 127,
+    "b": 255,
+    "a": 1
+  },
+  "fnLists": [
+    {
+      "icon": "icon-bookcase",
+      "iconColor": "#15d191",
+      "text": "用户名"
+    },
+    {
+      "icon": "icon-friend",
+      "iconColor": "#f1b31d",
+      "text": "昵称"
+    },
+    {
+      "icon": "icon-user-group",
+      "iconColor": "#6699ff",
+      "text": "性别"
+    },
+    {
+      "icon": "icon-user-group",
+      "iconColor": "#ff6699",
+      "text": "描述"
+    },
+    {
+      "icon": "icon-user-group",
+      "iconColor": "#33dd99",
+      "text": "头像地址"
+    }
+  ]
+}

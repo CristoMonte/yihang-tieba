@@ -1,0 +1,14 @@
+{
+  "name": "yihang-tieba",
+  "version": "1.0.0",
+  "description": "A Vue Project based on Tieba",
+  "main": "src/main.js | index.js",
+  "author": "杨凡 (易杭) <1025810224@qq.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev-server": "start && cd tieba-server && npm run dev",
+    "dev-client": "start && cd tieba-client && npm run dev",
+    "build": "cd tieba-client && npm run build",
+    "start": "cd tieba-server && npm run pm2"
+  }
+}

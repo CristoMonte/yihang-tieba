@@ -1,0 +1,116 @@
+transition(
+  enter-active-class="animated slideInRight",
+  leave-active-class="animated fadeOut"
+)
+  div.p-search-bar
+    header.search-box
+      i.icon-left-arrow(
+        @click="$router.go(-1)"
+      )
+      input.search-text(
+        type="search",
+        placeholder="搜吧、建吧 == 都在这里",
+        ref="searchText",
+        v-model="searchMsg",
+        @input.stop="searchPrompt",
+        @keyup.enter="submit();focusOff()",
+        @focus.self="focusOn"
+      )
+      button.search-btn(
+        v-if="searchMsg",
+        @click="clearSearchMsg",
+        @focus.self="focusOff"
+      ) 取消
+
+    transition(
+      enter-active-class="animated slideInLeft",
+      leave-active-class="animated fadeOut"
+    )
+      div.search-wrapper(
+        v-show="focus",
+        @touchstart.self="focusOff"
+      )
+        div.search-cont
+
+          //- 实时搜索反馈
+          section.search-prompt(
+            v-show="prompt[0]",
+            ref="searchPrompt"
+          )
+            div.search-prompt-cont
+              div.search-prompt-item(
+                v-for="(item,index) of prompt",
+                @click.stop="addTextPrompt(index)",
+                ref="touchCell_3"
+              )
+                span.search-prompt-index {{index+1}}
+                span.search-prompt-bar {{item.name}}
+                span.search-prompt-text {{item.description}}
+          
+          //- 搜索历史记录
+          section.search-history.bottom-1px(
+            v-show="history[0]"
+          )
+            div.search-history__title.bottom-1px 
+              h2.search-history-title-text 搜索历史
+              span.search-history-num {{history.length}} 
+            ul.search-history__items.bottom-1px(ref="searchHistoryWrapper")
+              div.search-history__items-cont
+                li.search-history__item(
+                  v-for="(item,index) of history"
+                  ref="touchCell"
+                )
+                  span.search-history__item-index {{index+1}}
+                  span.search-history__item-text(
+                    @click="addText(index)"
+                  ) {{item}}
+                  i.icon-close(
+                    @click="remove(index)"
+                  )
+            button.clear-search-history(
+              ref="touchCell_2",
+              @click="clear"
+            ) 清空历史纪录
+
+    div.result-wrapper(
+      ref="resultWrapper",
+      v-if="result.length"
+    )
+      ul.cells.result-cont
+        li.cell.result-item(
+          v-for="item of result",
+          ref="touchCell_1",
+          @click.stop="$router.push(`/bar-detail/${item._id}`)"
+        )
+          i.bar-icon(
+            :style="{backgroundColor:item.bg}"
+          )
+            img(
+              :src="item.icon",
+              ref="imgErr_1"
+            )
+          div.bar-info
+            span.bar-name {{item.name}}
+            span.bar-createDate {{item.createDate}}
+            div.bar-desc {{item.description}}
+            span.bar-focusNum 关注 {{item.focusNum}}
+            span.bar-postNum 文章 {{item.postNum}}
+            div.bar-admin(
+              v-for="i of item.admin"
+            ) 
+              div.bar-admin-item
+                img.bar-admin-avatar(
+                  :src="i.avatar",
+                  ref="imgErr_2"
+                )
+                div.bar-admin-nickname {{i.nickname}}
+    
+    div.create-bar(
+      v-show="createShow",
+      @click="$router.push(`/create-bar/${searchMsg}`)"
+      ref="touchCell_4"
+    )
+      div.create-bar-name {{searchMsg}}
+      div.create-bar-desc 对不起 没有检测到与此吧有关的信息！
+      div.create-bar-desc 接下来 是否要创建此吧呢？
+      button.create-bar-btn 创建

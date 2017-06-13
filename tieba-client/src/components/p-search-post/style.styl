@@ -1,0 +1,120 @@
+@import "../../common/style/mixin.styl"
+@import "../../common/style/variables.styl"
+
+// 定义 或 重载 变量
+$search-grey = $font-grey  // 灰色
+$search-box-height = $header-height  // 头部高度
+$search-page-padding = $page-padding  // 页面左右内边距
+$search-blue = $app-blue  // 页面的蓝色
+$search-head-bg = $bar-white // 头部背景颜色
+
+.c-search-post
+  posf-full()
+  z-index $p-search-post-z
+  overflow hidden
+  .search-box
+    posf-top-full()
+    height $search-box-height
+    box-sizing border-box
+    padding 0 $search-page-padding
+    background-color $search-head-bg
+    z-index 100
+    display flex
+    .icon-search
+      height 100%
+      display inline-block
+      width px(70)
+      line-height $search-box-height
+      text-align center
+      font-size px(36)
+      color $search-grey
+    .search-text
+      flex 1
+      height 100%
+      font-size px(32)
+      padding-right px(20)
+    .cancle-search
+      height 100%
+      width px(80)
+      font-size px(28)
+      color $search-blue
+      background-color transparent
+
+  .search-wrapper
+    posf-bottom-full()
+    top $search-box-height
+    .search-cont
+      // .search-info
+      //   display none
+      .search-history
+        width 100%
+        box-sizing border-box
+        padding-bottom px(12)
+        background-color #fff
+        .search-history__title
+          height px(66)
+          line-height px(66)
+          font-size px(26)
+          color $search-grey
+          padding 0 $search-page-padding
+          bottom-1px()
+        .search-history__item
+          width 100%
+          height px(92)
+          padding 0 $search-page-padding
+          box-sizing border-box
+          display flex
+          align-items center
+          justify-content space-between
+          font-size px(36)
+          color #999
+          .search-history__item-text
+            width px(700)
+            text-overflow ellipsis
+            white-space nowrap
+          .icon-close
+            text-align right
+            flex 1
+        .clear-search-history
+          width 100%
+          height px(110)
+          text-align center
+          line-height px(110)
+          font-size px(32)
+          background-color #fff
+          color $search-blue
+
+      .hot-post
+        width 100%
+        box-sizing border-box
+        padding 0 $search-page-padding
+        margin-top px(12)
+        background-color #fff
+        .hot-post__title
+          height px(66)
+          font-size px(26)
+          line-height px(66)
+          padding-left px(12)
+          color $search-grey
+          bottom-1px()
+        .hot-post__cont
+          width 100%
+          display flex
+          flex-flow row wrap
+          .hot-post__item
+            width 50%
+            height px(80)
+            text-overflow ellipsis
+            white-space nowrap
+            overflow hidden
+            line-height px(80)
+            padding-left px(12)
+            box-sizing border-box
+            font-size px(32)
+          .hot-post__more
+            color $search-blue
+            .icon-right-arrow
+              height 100%
+              line-height px(80)
+              font-size px(28)
+              margin-left px(10)

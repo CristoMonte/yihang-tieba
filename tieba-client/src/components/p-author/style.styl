@@ -1,0 +1,50 @@
+@import "../../common/style/mixin.styl"
+@import "../../common/style/variables.styl"
+
+// 定义 或 重载 变量
+
+::-webkit-scrollbar
+    width: 0px
+
+.p-author
+  posf-full()
+  z-index $p-author-z
+  overflow hidden
+  background-color rgba(7,17,27,.9)
+  color #fff
+  .author-wrapper
+    width 80%
+    height 70%
+    margin 10% auto
+    padding px(50) px(32)
+    border-radius px(8)
+    overflow-y scroll
+    background-color rgba(255,255,255,.2)
+    box-sizing border-box
+    .author-info
+      width 100%
+      font-size px(28)
+      line-height 1.5
+      .author-info-item
+        .author-info-item__title
+          padding px(8) px(16)
+          background-color #f66
+          border-radius px(6)
+        .author-info-item__cont
+          padding px(16) px(48)
+
+    .author-resume
+      width px(300)
+      height px(80)
+      line-height px(80)
+      text-align center
+      margin px(40) auto
+      background-color rgb(255,127,127)
+      border-radius px(8)
+      font-size px(48)
+    .author-info-close
+      width px(70)
+      height px(70)
+      display block
+      margin 0 auto px(70)
+      font-size px(70)

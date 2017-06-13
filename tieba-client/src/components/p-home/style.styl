@@ -1,0 +1,43 @@
+@import "../../common/style/mixin.styl"
+@import "../../common/style/variables.styl"
+
+// 定义 或 重载 变量
+$home-top-bar = $bar-white
+$home-top-title-color = $app-blue
+$home-top-border-color = $line-1px
+$home-header-height = $header-height
+$home-header-icon-size = $header-icon-size
+$home-header-icon-mr = $header-icon-mr
+
+.p-home
+  posf-full()
+  z-index $p-home-z
+  overflow hidden
+  .home-top-bar
+    posf-top-full()
+    z-index 100
+    height $home-header-height
+    background-color $home-top-bar
+    font-size 0
+    text-align right
+    &:after
+      content ' '
+      display block
+      position absolute
+      left 0
+      bottom 0
+      right 0
+      border-top 1px solid $home-top-border-color
+    .home-top-bar__title
+      posa-center()
+      font-size px(70)
+      color $home-top-title-color
+    .icon-search, .icon-game-handle
+      height 100%
+      line-height $home-header-height
+      font-size $home-header-icon-size
+      margin-right $home-header-icon-mr
+  .body-cont
+    width 100%
+    height 100%
+    overflow hidden

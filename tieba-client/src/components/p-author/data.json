@@ -1,0 +1,80 @@
+{
+  "基本信息": {
+    "姓名": "杨凡",
+    "性别": "男",
+    "年龄": "20",
+    "籍贯": "四川 南充",
+    "生日": "1996-10-21 (农)"
+  },
+  "教育背景": {
+    "学校": "东华理工大学",
+    "专业": "软件工程 (本)",
+    "就读": "2014-9 至 2018-6"
+  },
+  "联系方式": {
+    "手机": "150 7083 6209",
+    "邮箱": "yihang @ freeedit .cn",
+    "QQ": "10258 10224"
+  },
+  "技能属性": {
+    "前端": [
+      "Vue",
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Webpack"
+    ],
+    "后端": [
+      "Node",
+      "Mongodb"
+    ],
+    "基础": [
+      "计算机网络",
+      "PS设计"
+    ]
+  },
+  "学习属性": {
+    "常读书籍": [
+      "javascript高级程序设计",
+      "你不知道的javascript",
+      "编码：隐匿在计算机背后的语言",
+      "ES6标准入门",
+      "javascript语言精粹",
+      "HTML5与CSS3基础教程",
+      "CSS高效开发实战",
+      "CSS参考手册",
+      "Nodejs权威指南",
+      "JavascriptDOM编程艺术"
+    ],
+    "常用工具": [
+      "Vue",
+      "pug",
+      "stylus",
+      "babel",
+      "eslint",
+      "webpack",
+      "express",
+      "browser-sync",
+      "better-scroll"
+    ],
+    "学习笔记": {
+      "html": "https://github.com/freeedit/note-html",
+      "css": "https://github.com/freeedit/note-css",
+      "javascript": "https://github.com/freeedit/note-javascript",
+      "vue": "https://github.com/freeedit/note-vue",
+      "node": "https://github.com/freeedit/note-node",
+      "微信小程序": "https://github.com/freeedit/note-wechat",
+      "PS设计": "https://github.com/freeedit/note-psd",
+      "···": "https://github.com/freeedit"
+    }
+  },
+  "其它属性": {
+    "爱好设计": "玩过3年PS，热爱于网页的PSD设计，喜欢扁平化的设计风格。课余做过很多PSD图，目前也积累下了一些PSD设计上的心得。",
+    "喜欢阅读": "常常买书看，这样方便在书上做笔记。学习路线也基本上是在“书籍、官网文档、技术帖子”三个点上来回切换。阅读的范围不局限于前端，看见感兴趣的，也会去读一读。",
+    "小强迫症": "不喜欢臃肿、无注释、不对齐和乱起名字的代码，所以常强迫自己要将代码写得好看一点。"
+  },
+  "作品列表": {
+    "web排名": "微信小程序  目前已上架，可在微信中搜索到",
+    "Browser-over": "在浏览器上对比JPG设计图和效果的工具"
+  }
+}

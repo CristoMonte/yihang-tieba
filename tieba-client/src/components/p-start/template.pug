@@ -1,0 +1,30 @@
+transition(
+  enter-active-class="animated fadeIn",
+  leave-active-class="animated fadeOut"
+)
+  //- @click="closeShowStart",
+  div.p-start(
+    v-show="$store.state.startShow",
+    ref="startWrapper"
+  )
+    div.start-cont
+      div.start-page.start-page-1(
+        @click="closeShowStart"
+      )
+        img(src="./start-tie.png")
+        div 赶紧向右滑吧
+        div 开启我们的贴吧之旅
+      div.start-page.start-page-2
+        img(src="./start-1.png")
+        div 第一次进吧  好紧张~~
+      div.start-page.start-page-3
+        img(src="./start-2.png")
+        div 我已经被贴神的气势压得不能呼吸了
+      div.start-page.start-page-4
+        img(src="./start-3.png")
+        div 不能犹豫了 我要赶紧滑~
+      div.start-page.start-page-5
+        img(src="./start-4.png")
+        div 终于到底了
+        div 额 可是我该怎么进去呢？
+        div 哈哈 原来点击第一个页面就可以进去

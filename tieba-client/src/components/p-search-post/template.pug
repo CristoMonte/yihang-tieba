@@ -1,0 +1,61 @@
+transition(
+  enter-active-class="animated slideInRight",
+  leave-active-class="animated fadeOut"
+)
+  div.c-search-post
+    header.search-box
+      i.icon-search
+      input.search-text(
+        type="search",
+        placeholder="大家都在搜：别人有颜我有美手",
+        ref="searchText",
+        v-model="searchMsg",
+        @keyup.enter="submit"
+      )
+      button.cancle-search(
+        @click="backToLastRoute"
+      ) 取消
+      
+    div.search-wrapper(ref="searchWrapper")
+      div.search-cont
+        
+        //- 搜索到的文章信息
+        a-home-post-cell(
+          v-if="posts.length"
+          :posts="posts",
+          @update="updateScroll"
+        )
+        
+        //- 搜索的历史纪录
+        section.search-history(
+          v-show="history.length !== 0"
+        )
+          div.search-history__title.bottom-1px 搜索历史
+          ul.search-history__items
+              li.search-history__item(
+                v-for="(item,index) of history"
+                ref="touchCell"
+              )
+                span.search-history__item-text(
+                  @click="addText(index)"
+                ) {{item}}
+                i.icon-close(
+                  @click="remove(index)"
+                )
+          button.clear-search-history(
+            ref="touchCell_2",
+            @click="clear"
+          ) 清空历史纪录
+        
+        //- 贴吧近期热议 ---尚未实现该功能
+        section.hot-post
+          div.hot-post__title.bottom-1px 贴吧热议
+          div.hot-post__cont
+            span.hot-post__item(
+              v-for="item of hotPost",
+              ref="touchCell_1"
+            ) {{item}}
+            span.hot-post__item.hot-post__more 更多热议
+              i.icon-right-arrow
+          
+  

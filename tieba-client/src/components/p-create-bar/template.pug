@@ -1,0 +1,40 @@
+transition(
+  enter-active-class="animated fadeIn",
+  leave-active-class="animated fadeOut"
+)
+  div.p-create-bar
+    
+    header.create-bar
+      span.create-bar-title(
+        @click="$router.go(-1)"
+      )
+        i.icon-left-arrow  
+        span 回退 | 建吧
+    
+    div.body-wrapper
+      div.body-cont
+
+        div.bar-name {{$route.params.name}}
+        
+        textarea.bar-desc(
+          type="text",
+          placeholder="贴吧的描述性文字",
+          v-model="description"
+        )
+        
+        input.bar-bg(
+          type="text",
+          placeholder="贴吧的主题背景色 默认为#38f",
+          v-model="bg"
+        )
+        
+        input.bar-icon(
+          type="text",
+          placeholder="贴吧的图标地址 可以是Base64字符串",
+          v-model="icon"
+        )
+        
+        button.bar-info-submit(
+          ref="editSubmit",
+          @click.self.stop="editSubmit"
+        ) 确认创建

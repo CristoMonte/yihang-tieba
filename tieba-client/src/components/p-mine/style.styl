@@ -1,0 +1,143 @@
+@import "../../common/style/mixin.styl"
+@import "../../common/style/variables.styl"
+
+// 定义 或 重载 变量
+$mine-box-height = $header-height  // 头部高度
+$mine-page-padding = $page-padding  // 页面左右内边距
+$mine-header-font-size = $header-font-size // 头部字体大小
+$mine-header-icon-size = $header-icon-size // 头部图标大小
+$mine-bg-white = transparent  // 头部背景色
+$mine-grey = $app-grey  // 灰色
+
+.icon-right-arrow
+  font-size px(20)
+  color $mine-grey
+  margin-right px(32)
+
+.user-info-cell
+  &.user-money-info
+    > .cell-item:not(:first-child)
+      padding px(20) 0
+      left-1px()
+  > .cell-item
+    padding px(42) 0
+    flex 1
+    display flex
+    flex-direction column
+    justify-content center
+    align-items center
+    font-size px(28)
+    > :first-child
+      margin-bottom px(20)
+    i
+      font-size px(42)
+    .cell-desc
+      color $mine-grey
+
+.fn-lists
+  .fn-list
+    height px(104)
+    align-items center
+    .fn-icon
+      margin 0 px(26) 0 px(38)
+      font-size px(42)
+    .fn-text
+      flex 1
+      display inline-block
+      font-size px(32)
+    .fn-msg
+      font-size px(24)
+      color $mine-grey
+      margin-right px(26)
+
+.p-mine
+  posf-full()
+  z-index $p-mine-z
+  overflow hidden
+  .mine-top-bar
+    height $mine-box-height
+    width 100%
+    box-sizing border-box
+    padding 0 $mine-page-padding
+    background-color $mine-bg-white
+    display flex
+    justify-content space-between
+    align-items center
+    z-index 100
+    color #fff
+    posf-top-full()
+    .mine-top-title
+      flex 1
+      font-size $mine-header-font-size
+      margin-left px(18)
+    .icon-shop
+      margin-right px(30)
+      color #fff
+      font-size $mine-header-icon-size - px(10)
+    .icon-setting
+      color #fff
+      font-size $mine-header-icon-size
+  .body-wrapper
+    position absolute
+    left 0
+    right 0
+    top 0
+    bottom $bar-height - px(2)
+    .body-cont
+      .search-box
+        height $mine-box-height
+      .user-base-info
+        background url(./mine-bg.jpg) no-repeat
+        background-size cover
+        display flex
+        flex-flow column nowrap
+        align-items center
+        color #fff
+        .user-avatar img
+          display inline-block
+          margin-top px(118)
+          width px(188)
+          height px(188)
+          border-radius 50%
+          box-shadow 0 0 px(10) rgba(0,0,0,.5)
+        .user-name
+          margin px(42) 0 px(28)
+          font-size px(36)
+          .log
+            text-decoration underline
+            color #3df
+          .sex-icon
+            margin-left px(12)
+            font-size px(36)
+            box-shadow 0 0 px(6) rgba(0,0,0,.2)
+            &.icon-emoticon
+              color #fff
+            &.icon-male
+              color #3df
+            &.icon-female
+              color #ff535c
+        .user-seal
+          font-size px(36)
+          color #00ccff
+          margin-bottom px(28)
+          :not(:first-child)
+            margin-left px(8)
+        .user-bean
+          font-size px(26)
+          margin-bottom px(38)
+          .icon-card-bean
+            color #ffd500
+          span
+            margin-left px(8)
+      .user-money
+        .user-money-package
+          height px(72)
+          align-items center
+          .money-package-title
+            font-size px(28)
+            margin 0 px(12) 0 px(34)
+            color #aaa
+          .icon-baidu-wallet
+            color #ff7733
+            font-size px(36)
+            flex 1

@@ -1,0 +1,67 @@
+transition(
+  enter-active-class="animated slideInRight",
+  leave-active-class="animated fadeOut"
+)
+  div.p-post-detail
+
+    header.post-top-bar(@click="$router.go(-1)")
+      i.icon-left-arrow
+      span.post-top-title 帖子 | {{post.bar && post.bar.name}}
+    
+    div.body-wrapper(ref="postDetailWrapper")
+      div.body-cont
+    
+        div.post-info
+          div.post-title {{post.title}}
+          div.post-lz-info
+            i.lz-icon
+              img(
+                ref="imgErr_1",
+                :src="post.lz && post.lz.avatar"
+              )
+            div.lz
+              span.lz-name {{post.lz && post.lz.nickname}}
+              span.lz-mark 楼主
+              div.post-time {{post.createDate}}
+          div.post-cont {{post.cont}}
+
+        ul.cells.post-floors(
+          v-if="floors[0]"
+        )
+          li.cell.floor(
+            v-for="(floor,index) of floors",
+            :key="index",
+            ref="touchCell",
+            @click="commitSubmit(index)"
+          )
+            i.user-icon
+              img(
+                ref="imgErr_2",
+                :src="floor.ff.avatar"
+              )
+            div.ff
+              span.ff-name {{floor.ff && floor.ff.nickname}}
+              span.lz-mark(v-if="floor.ff.id === post.lz.id") 楼主
+              div.ff-time {{floor.createDate}}
+            div.floor-cont {{floor.cont}}
+
+            ul.floor-commits(
+              v-if="floor.commit[0]"
+            )
+              li.floor-commit(
+                v-for="commit of floor.commit",
+                :key="index"
+              )
+                span.commit-user {{commit.uid}}
+                span.lz-mark(v-if="commit.uid === post.lz.id") 楼主
+                span.commit-to(v-if="commit.to") : 回复 {{commit.to}}
+                span.commit-cont : {{commit.cont}}
+              //- button.floor-commit 回复
+
+    footer.post-bottom.top-1px
+      textarea.floor-text(
+        v-model="floorSu"
+      )
+      button.floor-submit(
+        @click="floorSubmit"
+      ) 回复

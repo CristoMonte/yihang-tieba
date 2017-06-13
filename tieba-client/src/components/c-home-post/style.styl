@@ -1,0 +1,13 @@
+@import "../../common/style/mixin.styl"
+@import "../../common/style/variables.styl"
+
+// 定义 或 重载 变量
+$body-fill-top-height = $header-height - px(2)  // cells的上面高度
+$body-fill-bottom-height = $bar-height - px(2)  // cells的下面高度
+
+.c-home-post
+  position absolute
+  top $body-fill-top-height
+  bottom $body-fill-bottom-height
+  left 0
+  right 0

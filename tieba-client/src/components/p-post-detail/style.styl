@@ -1,0 +1,139 @@
+@import "../../common/style/mixin.styl"
+@import "../../common/style/variables.styl"
+
+// 定义 或 重载 变量
+$post-grey = $font-grey  // 灰色
+$post-box-height = $header-height  // 头部高度
+$post-page-padding = $page-padding  // 页面左右内边距
+$post-header-font-size = $header-font-size // 头部字体大小
+$post-bg-white = $bar-white  // 头部背景色
+$post-cont-padding = px(36)
+
+.lz-mark
+  color #3388ff
+  font-weight bold
+  margin 0 px(10)
+
+.p-post-detail
+  posf-full()
+  z-index $p-post-detail-z
+  overflow hidden
+  .post-top-bar
+    height $post-box-height
+    width 100%
+    box-sizing border-box
+    padding 0 $post-page-padding
+    background-color $post-bg-white
+    display flex
+    justify-content space-between
+    align-items center
+    z-index 100
+    color $post-grey
+    font-weight bold
+    posf-top-full()
+    .post-top-title
+      flex 1
+      font-size $post-header-font-size
+      margin-left px(18)
+
+  .post-bottom
+    height $post-box-height
+    width 100%
+    box-sizing border-box
+    padding 0 $post-page-padding
+    background-color $post-bg-white
+    display flex
+    align-items center
+    z-index 100
+    top-1px()
+    posf-bottom-full()
+    .floor-text
+      height px(70)
+      font-size px(28)
+      flex 1
+      background-color rgba(0,0,0,.1)
+      padding px(18) px(24)
+      box-sizing border-box
+      border none
+      resize none
+    .floor-submit
+      height px(70)
+      width px(160)
+      background-color #465866
+      color #fff
+
+  .body-wrapper
+    position absolute
+    left 0
+    right 0
+    top $post-box-height
+    bottom $post-box-height - px(1)
+
+    .post-info
+      background-color #fff
+      margin-bottom px(20)
+      padding 0 $post-cont-padding
+      .post-title
+        font-size px(40)
+        line-height px(60)
+        white-space pre-wrap
+        padding px(40) 0 px(30)
+      .post-lz-info
+        display flex
+        margin-bottom px(30)
+        .lz-icon
+          width px(84)
+          height px(84)
+          background-color #3388ff
+          border-radius 50%
+          overflow hidden
+          margin-right px(20)
+        .lz
+          line-height px(42)
+          .lz-name
+            font-size px(32)
+          .post-time
+            font-size px(24)
+            color $post-grey
+      .post-cont
+        font-size px(28)
+        line-height 1.6
+        padding-bottom px(40)
+
+    .floor
+      display block
+      padding px(40) $post-cont-padding
+      .user-icon
+        display inline-block
+        width px(64)
+        height px(64)
+        border-radius 50%
+        background-color #38f
+        overflow hidden
+        margin-right px(20)
+      .ff
+        display inline-block
+        .ff-name
+          font-size px(28)
+          line-height px(40)
+        .ff-time
+          font-size px(20)
+          line-height px(24)
+          color #999
+      .floor-cont
+        font-size px(28)
+        line-height 1.6
+        white-space pre-wrap
+        word-break break-all
+        margin px(20) 0 px(30)
+
+      .floor-commits
+        padding px(20)
+        background-color #eee
+        .floor-commit
+          font-size px(24)
+          line-height 1.4
+          &:not(:first-child)
+            margin-top px(10)
+        .floor-commit
+          padding px(10) px(30)

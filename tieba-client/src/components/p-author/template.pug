@@ -1,0 +1,22 @@
+transition(
+  enter-active-class="animated fadeIn",
+  leave-active-class="animated fadeOut"
+)
+  div.p-author(
+    @click.self="closeShowAuthor",
+    v-show="$store.state.authorShow"
+  )
+    div.author-wrapper
+      div.author-info
+        div.author-info-item(
+          v-for="(val_1,key_1) of author"
+        )
+          div.author-info-item__title {{key_1}} :
+          div.author-info-item__cont
+            div(v-for="(val_2,key_2) of val_1")
+              | {{key_2}}: {{val_2}}
+      div.author-resume(
+        ref="touchCell",
+        @click="resume"
+      ) 我的简历
+      i.icon-close.author-info-close(@click.self="closeShowAuthor")

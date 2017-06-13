@@ -1,0 +1,9 @@
+router-link(
+  :to="barCell.path",
+  class="bottom-bar-cell"
+)
+  i(
+    :class="barIcon",
+    class="bottom-bar-cell__icon"
+  )
+  span(class="bottom-bar-cell__text") {{barCell.title}}

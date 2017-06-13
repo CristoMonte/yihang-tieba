@@ -1,0 +1,122 @@
+@import "../../common/style/mixin.styl"
+@import "../../common/style/variables.styl"
+
+// 定义 或 重载 变量
+$bar-grey = $font-grey  // 灰色
+$bar-box-height = $header-height  // 头部高度
+$bar-page-padding = $page-padding  // 页面左右内边距
+$bar-blue = $app-blue  // 页面的蓝色
+$bar-header-font-size = $header-font-size // 头部字体大小
+$bar-header-icon-size = $header-icon-size // 头部图标大小
+$bar-level-default-color = $app-blue  // 贴吧等级标识的默认背景颜色
+$bar-bg-white = $bar-white  // 头部背景色
+
+.p-bar
+  posf-full()
+  z-index $p-bar-z
+  overflow hidden
+  .bar-top-bar
+    height $bar-box-height
+    width 100%
+    box-sizing border-box
+    padding 0 $bar-page-padding
+    background-color $bar-bg-white
+    display flex
+    justify-content space-between
+    align-items center
+    z-index 100
+    posf-top-full()
+    .bar-top-title
+      flex 1
+      font-size $bar-header-font-size
+      margin-left px(18)
+    .icon-game-handle
+      margin-right px(30)
+      font-size $bar-header-icon-size
+    .icon-sign
+      font-size $bar-header-icon-size
+
+  .body-wrapper
+    position absolute
+    left 0
+    right 0
+    top $bar-box-height
+    bottom $bar-height - px(1)
+    .body-cont
+      .search-box
+        height $bar-box-height
+        width 100%
+        box-sizing border-box
+        padding px(20) $bar-page-padding
+        background-color #fff
+        .search-cont
+          width 100%
+          height px(70)
+          border-radius px(8)
+          background-color #f4f4f4
+          display flex
+          align-items center
+          color #bbb
+          .icon-search
+            font-size px(36)
+            margin-left px(16)
+          .search-text
+            font-size px(32)
+            margin-left px(18)
+
+      .bars-cont
+        background-color #fff
+        .attention-title
+          width 100%
+          height px(78)
+          line-height px(78)
+          font-size px(28)
+          padding-left px(26)
+          box-sizing border-box
+          color #999
+          bottom-1px()
+        .bar-items
+          padding px(16) $bar-page-padding
+          display flex
+          flex-flow row wrap
+          .bar-item
+            width px(336)
+            margin-bottom px(28)
+            height px(92)
+            background-color #f4f4f4
+            border-radius px(4)
+            border px(1) solid #eee
+            display flex
+            justify-content space-between
+            align-items center
+            &.bar-item--touch
+              background-color #ddd
+              border-color #ddd
+            &:nth-child(2n)
+              margin-left px(24)
+            &.bar-item--add
+              justify-content center
+              font-size px(32)
+              color #aaa
+              &.bar-add--touch
+                background-color #fff
+                border-color #38f
+                .icon-add
+                  color #38f
+            .bar-text
+              font-size px(32)
+              margin-left px(26)
+            .bar-level-icon
+              width px(50)
+              height px(32)
+              margin-right px(16)
+              border-radius px(16)
+              background-color $bar-level-default-color
+              display flex
+              align-items center
+              justify-content center
+
+              .my-level
+                color #fff
+                font-size px(26)
+                font-weight bold

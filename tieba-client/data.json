@@ -1,0 +1,17 @@
+{
+  "home": {
+    "msg": "home"
+  },
+  "bar": {
+    "msg": "bar"
+  },
+  "know": {
+    "msg": "know"
+  },
+  "message": {
+    "msg": "msg"
+  },
+  "mine": {
+    "msg": "mine"
+  }
+}

@@ -1,0 +1,63 @@
+@import "../../common/style/mixin.styl"
+@import "../../common/style/variables.styl"
+
+// 定义 或 重载 变量
+$search-grey = $font-grey  // 灰色
+$search-box-height = $header-height  // 头部高度
+$search-page-padding = $page-padding  // 页面左右内边距
+$search-blue = $app-blue  // 页面的蓝色
+$search-head-bg = $bar-white // 头部背景颜色
+
+.p-create-bar
+  posf-full()
+  z-index $p-create-bar-z
+  overflow hidden
+  .create-bar
+    posf-top-full()
+    height $search-box-height
+    box-sizing border-box
+    padding 0 $search-page-padding
+    background-color $search-head-bg
+    z-index 100
+    display flex
+    .create-bar-title
+      font-size px(36)
+      color $search-grey
+      height 100%
+      .icon-left-arrow
+        line-height $search-box-height
+        width px(70)
+        display inline-block
+        text-align center
+
+  .body-wrapper
+    posf-bottom-full()
+    top $search-box-height
+    background-color #f4f4f4
+    z-index 90
+    .body-cont
+      df-center()
+      flex-direction column
+      .bar-name
+        font-size px(80)
+        margin px(80) 0 px(50)
+        color #ccc
+      .bar-desc
+      .bar-bg
+      .bar-icon
+        width 80%
+        font-size px(28)
+        line-height 2
+        padding px(16) px(30)
+        margin-bottom px(40)
+        border-radius px(6)
+      .bar-desc
+        border none
+        resize none
+        height px(180)
+        line-height 1.6
+      .bar-info-submit
+        padding px(20) px(40)
+        background-color #fff
+        margin-top px(40)
+        border-radius px(6)

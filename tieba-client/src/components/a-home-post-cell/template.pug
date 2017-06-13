@@ -1,0 +1,19 @@
+ul.cells.a-home-post-cell
+  li.cell.post-cell(
+    ref="touchCell",
+    v-for="post of posts",
+    v-if="post && post.title",
+    @click="$router.push(`/post-detail/${post.id}`)"
+  )
+    img.user-avatar.user-default-avatar(
+      ref="imgErr",
+      :src="post.lz && post.lz.avatar"
+    )
+    div.post-cont
+      div.user-info
+        span.user-id {{post.lz && post.lz.nickname}}
+        span.user-public-time {{post.createDate}}
+      h3.post-title.ellipsis {{post.title}}
+      p.post-simple(
+        v-text="post.cont"
+      )

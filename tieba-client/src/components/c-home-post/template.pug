@@ -1,0 +1,7 @@
+div.c-home-post(ref="homePostsWrapper")
+  div.post-lists
+    a-home-post-cell(
+      v-if="posts.length"
+      :posts="posts",
+      @update="updateScroll"
+    )

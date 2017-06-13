@@ -1,0 +1,21 @@
+div.p-message
+  header.message-top-bar
+    span.message-top-title(@click="openShowAuthor") 消息
+  div.body-wrapper(ref="msgWrapper")
+    ul.body-cont.cells
+      li.msg-item.cell(
+        v-for="(item,index) of msgList",
+        :key="index",
+        v-if="item.msg || item.arrow",
+        ref="touchCell"
+      )
+        i.msg-icon(
+          :class="item.icon",
+          :style="{'background-color':item.iconColor}"
+        )
+        div.msg-cont
+          div.msg-head
+            span.msg-title {{item.title}}
+            span.msg-time(v-if="item.time") {{item.time}}
+            span.msg-time(v-else).icon-right-arrow
+          div.msg-text {{item.msg}}

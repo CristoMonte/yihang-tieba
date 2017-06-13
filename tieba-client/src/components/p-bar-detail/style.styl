@@ -1,0 +1,141 @@
+@import "../../common/style/mixin.styl"
+@import "../../common/style/variables.styl"
+
+// 定义 或 重载 变量
+$bar-detail-box-height = $header-height  // 头部高度
+$bar-detail-page-padding = $page-padding  // 页面左右内边距
+$bar-detail-header-font-size = $header-font-size // 头部字体大小
+$bar-detail-header-icon-size = $header-icon-size // 头部图标大小
+$bar-detail-bg-white = transparent  // 头部背景色
+$bar-detail-grey = $app-grey  // 灰色
+
+@keyframes colorRun {
+  from {
+    background-color #38f
+  }
+  to {
+    background-color #f66
+  }
+}
+
+.add-post
+  position fixed
+  right px(60)
+  bottom px(100)
+  width px(100)
+  height px(100)
+  z-index 99
+  background-color #38f
+  color #fff
+  border-radius px(28)
+  animation colorRun 10s linear infinite alternate
+
+.create-post
+  posf-full()
+  z-index 100
+  background-color rgba(7,17,27,.8)
+
+.create-post-cont
+  posf-bottom-full()
+  height px(600)
+  background-color #f4f4f4
+  display flex
+  flex-flow column nowrap
+  align-items center
+  justify-content center
+  z-index 1000
+  h1
+    font-size px(40)
+    margin-bottom px(40)
+    font-weight bold
+    color #999
+  textarea
+    resize none
+    border none
+    width px(640)
+    font-size px(28)
+    line-height 1.4
+    padding px(20) px(40)
+    box-sizing border-box
+    background-color #fff
+    margin-bottom px(40)
+    &.post-title
+      height px(80)
+    &.post-desc
+      height px(140)
+  .post-submit
+    padding px(20) px(40)
+    color #fff
+    background-color #aaa
+
+.p-bar-detail
+  posf-full()
+  z-index $p-bar-detail-z
+  overflow hidden
+  .bar-detail-top-bar
+    height $bar-detail-box-height
+    width 100%
+    box-sizing border-box
+    padding 0 $bar-detail-page-padding
+    background-color $bar-detail-bg-white
+    display flex
+    justify-content space-between
+    align-items center
+    z-index 100
+    color #fff
+    posf-top-full()
+    .bar-top-title
+      flex 1
+      font-size $bar-detail-header-font-size
+      margin-left px(18)
+    .icon-dirft-bottle
+      margin-right px(30)
+      font-size $bar-detail-header-icon-size - px(10)
+    .icon-setting
+      font-size $bar-detail-header-icon-size
+
+  .body-wrapper
+    posa-full()
+    .body-cont
+
+      .bar-header
+        height px(320)
+        background-color #393F56
+        margin-bottom px(20)
+        color #fff
+        padding px(116) px(24) 0 px(34)
+        box-sizing border-box
+        display flex
+        .bar-icon img
+          width px(160)
+          height px(160)
+          margin-right px(20)
+        .bar-header-right
+          flex 1
+          .bar-name
+            font-size px(44)
+          .bar-info
+            font-size px(28)
+            line-height px(52)
+          .bar-level
+          .bar-sign
+          .bar-add
+            height px(64)
+            width px(150)
+          .bar-level
+          .bar-sign
+            margin-right px(20)
+
+      .bar-desc
+        min-height px(160)
+        max-height px(320)
+        background-color #fff
+        color #999
+        width 96%
+        overflow auto
+        margin 0 auto px(20)
+        padding px(24) px(34)
+        white-space pre-wrap
+        border-radius px(8)
+        box-shadow 0 0 px(6) rgba(127,127,127,.1)
+        box-sizing border-box

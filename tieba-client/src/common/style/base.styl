@@ -1,0 +1,99 @@
+/**
+ * 所有公有类名的定义部分
+ *
+ * 2017.5 www.freeedit.cn
+ * yang fan
+ */
+
+@import "./mixin"
+@import "./variables"
+
+// 定义 或 重载 变量
+$cell-border-line = $line-1px  // cell的边线颜色
+$body-fill-top-height = $header-height - px(2)  // cells的上面高度
+$body-fill-bottom-height = $bar-height - px(2)  // cells的下面高度
+$cells-space = px(20)  // cells之间的间隙
+
+body,html
+  line-height: 1
+  font-weight: 400
+  font-family: 'PingFang SC','STHeitiSC-Light','Helvetica-Light',serif
+
+button
+  outline none
+  border none
+  padding 0
+
+input
+  -webkit-appearance none
+  &::-webkit-search-cancel-button
+    display none
+
+.clearfix
+  display: inline-block
+  &:after
+    display: block
+    content: "."
+    height: 0
+    line-height: 0
+    clear: both
+    visibility: hidden
+
+.touch-active
+  transition .1s !important
+  background-color #f4f4f4 !important
+
+.ellipsis
+  overflow-x hidden
+  white-space nowrap
+  text-overflow ellipsis
+
+.cells
+  top-1px($cell-border-line)
+  background-color #fff
+  // padding-top $body-fill-top-height
+  // padding-bottom $body-fill-bottom-height
+  &:not(:first-of-type)
+    margin-top $cells-space
+  .cell
+    bottom-1px($cell-border-line)
+    display flex
+
+.post-cell
+  padding px(30) px(35)
+
+@media (-webkit-min-device-pixel-ratio: 1.5),(min-device-pixel-ratio: 1.5)
+  .bottom-1px, .top-1px, .cells, .cell
+    &::after
+      -webkit-transform: scaleY(0.6666667)
+      transform: scaleY(0.6666667)
+
+@media (-webkit-min-device-pixel-ratio: 2),(min-device-pixel-ratio: 2)
+  .bottom-1px, .top-1px, .cells, .cell
+    &::after
+      -webkit-transform: scaleY(0.5)
+      transform: scaleY(0.5)
+
+@media (-webkit-min-device-pixel-ratio: 3),(min-device-pixel-ratio: 3)
+  .bottom-1px, .top-1px, .cells, .cell
+    &::after
+      -webkit-transform: scaleY(0.3333334)
+      transform: scaleY(0.3333334)
+
+@media (-webkit-min-device-pixel-ratio: 1.5),(min-device-pixel-ratio: 1.5)
+  .left-1px
+    &::after
+      -webkit-transform: scaleX(0.6666667)
+      transform: scaleX(0.6666667)
+
+@media (-webkit-min-device-pixel-ratio: 2),(min-device-pixel-ratio: 2)
+  .left-1px
+    &::after
+      -webkit-transform: scaleX(0.5)
+      transform: scaleX(0.5)
+
+@media (-webkit-min-device-pixel-ratio: 3),(min-device-pixel-ratio: 3)
+  .left-1px
+    &::after
+      -webkit-transform: scaleX(0.3333334)
+      transform: scaleX(0.3333334)

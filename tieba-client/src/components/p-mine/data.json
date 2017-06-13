@@ -1,0 +1,97 @@
+{
+  "upLowColor": {
+    "r": 80,
+    "g": 84,
+    "b": 90,
+    "a": 1
+  },
+  "defaultColor": {
+    "r": 255,
+    "g": 255,
+    "b": 255,
+    "a": 0
+  },
+  "downLowColor": {
+    "r": 48,
+    "g": 128,
+    "b": 255,
+    "a": 1
+  },
+  "fnLists": [
+    [
+      {
+        "icon": "icon-gift",
+        "iconColor": "#ff535c",
+        "text": "我收到的礼物"
+      },
+      {
+        "icon": "icon-direct-seeding",
+        "iconColor": "#ff535c",
+        "text": "直播"
+      },
+      {
+        "icon": "icon-diamond",
+        "iconColor": "#1568e3",
+        "text": "蓝钻",
+        "msg": "我的蓝钻剩余: 0"
+      },
+      {
+        "icon": "icon-crown",
+        "iconColor": "#ffc127",
+        "text": "会员"
+      },
+      {
+        "icon": "icon-record",
+        "iconColor": "#fd7a00",
+        "text": "消费记录"
+      }
+    ],
+    [
+      {
+        "icon": "icon-star",
+        "iconColor": "#14c083",
+        "text": "我的收藏"
+      },
+      {
+        "icon": "icon-history",
+        "iconColor": "#33aaff",
+        "text": "浏览历史"
+      },
+      {
+        "icon": "icon-card-package",
+        "iconColor": "#fc8123",
+        "text": "我的卡包"
+      },
+      {
+        "icon": "icon-dirft-bottle",
+        "iconColor": "#f3343e",
+        "text": "漂流瓶"
+      },
+      {
+        "icon": "icon-direct-seeding",
+        "iconColor": "#b32bf3",
+        "text": "主播任务"
+      }
+    ],
+    [
+      {
+        "icon": "icon-bookcase",
+        "iconColor": "#15d191",
+        "text": "我的书架",
+        "msg": "还没有内容，去书城看看"
+      }
+    ],
+    [
+      {
+        "icon": "icon-friend",
+        "iconColor": "#f1b31d",
+        "text": "我的好友"
+      },
+      {
+        "icon": "icon-user-group",
+        "iconColor": "#f1a91e",
+        "text": "我的群组"
+      }
+    ]
+  ]
+}

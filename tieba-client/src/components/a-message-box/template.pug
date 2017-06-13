@@ -1,0 +1,10 @@
+transition(
+  enter-active-class="animated fadeIn",
+  leave-active-class="animated fadeOut"
+)
+  div.a-message-box(
+    @click.self="closeShowMessage",
+    v-show="$store.state.messageBox"
+  )
+    div.message-wrapper
+      div.message-cont {{message}}

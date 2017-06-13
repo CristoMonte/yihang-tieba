@@ -1,0 +1,133 @@
+/**
+ * 所有公有方法的定义部分
+ *
+ * 2017.5 www.freeedit.cn
+ * yang fan
+ */
+
+//默认基准font-size
+$baseFontSize = 75;
+
+px($px){
+  $px / $baseFontSize * 1rem;
+}
+
+clearfix()
+  display: inline-block
+  &:after
+    display: block
+    content: "."
+    height: 0
+    line-height: 0
+    clear: both
+    visibility: hidden
+
+posa-center()
+  position absolute
+  left 50%
+  top 50%
+  transform translateX(-50%) translateY(-50%)
+
+posa-h-center()
+  position absolute
+  left 50%
+  transform translateX(-50%)
+
+posa-top-full()
+  position absolute
+  top 0
+  left 0
+  right 0
+
+posa-full()
+  position absolute
+  top 0
+  left 0
+  right 0
+  bottom 0
+
+posf-full()
+  position fixed
+  top 0
+  left 0
+  right 0
+  bottom 0
+
+posf-top-full()
+  position fixed
+  top 0
+  left 0
+  right 0
+
+posf-bottom-full()
+  position fixed
+  bottom 0
+  left 0
+  right 0
+
+df-center()
+  display flex
+  justify-content center
+  align-items center
+  align-content center
+
+bottom-1px($color = #dddddd)
+  position relative
+  &:after
+    content ' '
+    display block
+    position absolute
+    left 0
+    bottom 0
+    right 0
+    border-bottom 1px solid $color
+
+top-1px($color = #dddddd)
+  position relative
+  &:after
+    content ' '
+    display block
+    position absolute
+    left 0
+    top 0
+    right 0
+    border-top 1px solid $color
+
+left-1px($color = #dddddd)
+  position relative
+  &:after
+    content ' '
+    display block
+    position absolute
+    left 0
+    bottom 0
+    top 0
+    border-left 1px solid $color
+
+bg-image($url)
+  background-image url($url+'.png')
+
+// bg-image($url)
+//   background-image url($url + "@2x.png")
+//   @media (-webkit-min-device-pixel-radio: 3),(min-device-pixel-radio: 3)
+//     background-color url($url + "@3x.png")
+
+image-block($width)
+  position relative
+  width $width
+  height 0
+  padding-top 61.8033988%
+  >:first-child
+    position absolute
+    top 0
+    left 0
+    width 100%
+    height 100%
+  >:not(:first-child)
+    display none
+
+flex-center()
+  display flex
+  justify-content center
+  align-content center
+  align-items center

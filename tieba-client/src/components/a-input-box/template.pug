@@ -1,0 +1,26 @@
+transition(
+  enter-active-class="animated fadeIn",
+  leave-active-class="animated fadeOut"
+)
+  div.a-input-box(
+    v-show="$store.state.inputShow",
+    @touchend.self="$store.dispatch('setInputShow')"
+  )
+    div.input-cont
+      h2.input-title {{input.title ? input.title : '输入'}}
+      textarea.input-text(
+        autofocus="autofocus",
+        placeholder="请输入文字···",
+        v-model="input.text",
+        ref="editText",
+        rows="5"
+      ) 坎坎坷坷
+      div.edit-btns
+        button.edit-btn(
+          ref="editSubmit",
+          @click.stop="clear"
+        ) 清空
+        button.edit-btn(
+          ref="editClear",
+          @click.stop="submit"
+        ) 确认

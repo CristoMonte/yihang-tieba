@@ -1,0 +1,27 @@
+[
+  {
+    "icon": ["home", "home-active"],
+    "title": "首页",
+    "path": "/root/home"
+  },
+  {
+    "icon": ["know", "know-active"],
+    "title": "知道",
+    "path": "/root/know"
+  },
+  {
+    "icon": ["bar", "bar-active"],
+    "title": "进吧",
+    "path": "/root/bar"
+  },
+  {
+    "icon": ["message", "message-active"],
+    "title": "消息",
+    "path": "/root/message"
+  },
+  {
+    "icon": ["mine", "mine-active"],
+    "title": "我的",
+    "path": "/root/mine"
+  }
+]

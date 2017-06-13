@@ -1,0 +1,44 @@
+@import "../../common/style/mixin.styl"
+@import "../../common/style/variables.styl"
+
+// 定义 或 重载 变量
+
+.a-home-post-cell
+  .post-cell
+    .user-avatar
+      display block
+      width px(70)
+      height px(70)
+      margin-right px(18)
+      border-radius 50%
+      &.user-default-avatar
+        background-image url(./user-default-avatar.png)
+        background-size cover
+    .post-cont
+      flex 1
+      color #999
+      .user-info
+        margin-bottom px(24)
+        font-size px(26)
+        color #333
+        .user-public-time
+          margin-left px(20)
+      .post-title
+        width 18em
+        margin-bottom px(20)
+        font-size px(32)
+      .post-simple
+        line-height 1.6em
+        font-size px(28)
+        margin-bottom px(16)
+        white-space pre-wrap
+      .post-photo
+        display flex
+        flex-flow row wrap
+        font-size 0
+        li
+          image-block(px(292))
+          &:nth-child(2n-1)
+            margin-right px(8)
+          &:not(:nth-child(-2))
+            margin-bottom px(8)

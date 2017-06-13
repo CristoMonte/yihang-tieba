@@ -1,0 +1,32 @@
+div.p-bar
+  header.bar-top-bar
+    span.bar-top-title(@click="openShowAuthor") 进吧
+    i.icon-game-handle
+    i.icon-sign
+  div.body-wrapper(ref="barWrapper")
+    div.body-cont
+      div.search-box
+        router-link(to="/search-post")
+          div.search-cont
+            i.icon-search
+              span.search-text 大家都在搜：别人有颜我有美手
+              
+      div.bars-cont
+        div.attention-title.bottom-1px 关注的吧
+
+        ul.bar-items
+          li.bar-item(
+            v-for="item of followBar",
+            ref="touchCell",
+            @click="$router.push(`/bar-detail/${item._id}`)"
+          )
+            h3.bar-text {{item.name}}
+            div.bar-level-icon
+              span.my-level 0
+
+          li.bar-item.bar-item--add(
+            ref="touchCell_1",
+            @click="$router.push('/search-bar')"
+          )
+            i.icon-add
+          

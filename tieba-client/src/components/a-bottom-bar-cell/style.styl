@@ -1,0 +1,47 @@
+@import "../../common/style/mixin.styl"
+@import "../../common/style/variables.styl"
+
+// 定义 或 重载 变量
+$normal-icon-color = $app-grey  // 图标未激活时的颜色
+$active-icon-color = $app-blue  // 图标已激活时的颜色
+
+.bottom-bar-cell
+  height 100%
+  display block
+  flex-center()
+  flex-direction column
+  color $normal-icon-color
+  &.router-link-active
+    color $active-icon-color
+  .bottom-bar-cell__icon
+    display block
+    width px(60)
+    height px(60)
+    overflow hidden
+    background-repeat no-repeat
+    background-size px(70)
+    background-position center
+    &.bar
+      bg-image('bar')
+    &.bar-active
+      bg-image('bar-active')
+    &.home
+      bg-image('home')
+    &.home-active
+      bg-image('home-active')
+    &.know
+      bg-image('know')
+    &.know-active
+      bg-image('know-active')
+    &.message
+      bg-image('message')
+    &.message-active
+      bg-image('message-active')
+    &.mine
+      bg-image('mine')
+    &.mine-active
+      bg-image('mine-active')
+  .bottom-bar-cell__text
+    display block
+    font-size px(26)
+    margin-top px(6)

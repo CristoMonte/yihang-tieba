@@ -1,0 +1,93 @@
+
+div.p-mine
+  header.mine-top-bar(
+    :style="{'background-color':header.bgc}"
+  )
+    span.mine-top-title(@click.stop="$store.dispatch('switchAuthorPage', true)") 我的
+    i.icon-shop
+    i.icon-setting(
+      v-if="userinfo.nickname",
+      @click="$router.push('/editUserinfo')"
+    )
+  div.body-wrapper(ref="mineWrapper")
+    div.body-cont
+      
+      div.user-base-info
+        i.user-avatar
+          img(
+            :src="userinfo.avatar",
+            ref="imgErr"
+          )
+        h3.user-name 
+          span(
+            v-if="userinfo.nickname",
+            @click="$router.push('/editUserinfo')"
+          ) {{userinfo.nickname}}
+          span(v-else) 
+            span.log(@click="$router.push('/login')") 登录
+            span  或 
+            span.log(@click="$router.push('/logup')") 注册
+          i.sex-icon(
+            :class="'icon-male'"
+          )
+        div.user-seal
+          i.icon-seal
+          i.icon-add-seal
+        div.user-bean
+          i.icon-card-bean 
+          span 0
+          span | 获取T豆
+          
+      ul.cells
+        li.cell.user-info-cell
+          div.cell-item(ref="touchCell1")
+            div {{following ? following.length : '^-^'}}
+            div.cell-desc 关注
+          div.cell-item(ref="touchCell2")
+            div {{followers ? followers.length : '^-^'}}
+            div.cell-desc 粉丝
+          div.cell-item(ref="touchCell3")
+            div 0
+            div.cell-desc 帖子
+          div.cell-item(
+            ref="touchCell4",
+            @click="$router.push('/root/bar')"
+          )
+            div {{followBar ? followBar.length : '^-^'}}
+            div.cell-desc 关注的吧
+            
+      ul.cells.user-money
+        li.cell.user-money-package
+          div.money-package-title 百度钱包
+          i.icon-baidu-wallet
+          i.icon-right-arrow
+        li.cell.user-info-cell.user-money-info
+          div.cell-item.left-1px(ref="touchCell5")
+            i.icon-balance
+            div.cell-desc 钱包余额
+          div.cell-item.left-1px(ref="touchCell6")
+            i.icon-card-coupons
+            div.cell-desc 卡券包
+          div.cell-item.left-1px(ref="touchCell7")
+            i.icon-bank-card
+            div.cell-desc 银行卡
+          div.cell-item.left-1px(ref="touchCell8")
+            i.icon-t-bean
+            div.cell-desc 获取T豆
+            
+      ul.cells.fn-lists(
+        v-for="(list,listIndex) of functionLists",
+        :key="listIndex"
+      )
+        li.cell.fn-list(
+          v-for="(item,index) of list",
+          :key="index",
+          ref="touchCell"
+        )
+          i.fn-icon(
+            :class="item.icon",
+            :style="{color:item.iconColor}"
+          )
+          span.fn-text {{item.text}}
+          div.fn-msg(v-if="item.msg") {{item.msg}}
+          i.icon-right-arrow

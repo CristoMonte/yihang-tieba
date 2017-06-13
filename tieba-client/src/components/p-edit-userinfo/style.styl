@@ -1,0 +1,105 @@
+@import "../../common/style/mixin.styl"
+@import "../../common/style/variables.styl"
+
+// 定义 或 重载 变量
+$edit-userinfo-box-height = $header-height  // 头部高度
+$edit-userinfo-page-padding = $page-padding  // 页面左右内边距
+$edit-userinfo-header-font-size = $header-font-size // 头部字体大小
+$edit-userinfo-header-icon-size = $header-icon-size // 头部图标大小
+$edit-userinfo-bg-white = transparent  // 头部背景色
+$edit-userinfo-grey = $app-grey  // 灰色
+
+.fn-lists
+  .fn-list
+    min-height px(104)
+    box-sizing border-box
+    padding-top px(30)
+    padding-bottom px(30)
+    align-items center
+    .fn-icon
+      margin 0 px(26) 0 px(38)
+      font-size px(42)
+    .fn-text
+      width px(180)
+      display inline-block
+      font-size px(32)
+      flex-shrink 0
+    .fn-msg
+      flex 1
+      width px(300)
+      white-space pre-wrap
+      word-wrap break-word
+      font-size px(28)
+      color $edit-userinfo-grey
+      margin-right px(26)
+
+.p-edit-userinfo
+  posf-full()
+  z-index $p-edit-userinfo-z
+  overflow hidden
+  .edit-userinfo-top-bar
+    height $edit-userinfo-box-height
+    width 100%
+    box-sizing border-box
+    padding 0 $edit-userinfo-page-padding
+    background-color $edit-userinfo-bg-white
+    display flex
+    justify-content space-between
+    align-items center
+    z-index 100
+    color #fff
+    posf-top-full()
+    .edit-userinfo-top-title
+      flex 1
+      font-size $edit-userinfo-header-font-size
+      margin-left px(18)
+
+  .body-wrapper
+    position absolute
+    left 0
+    right 0
+    top 0
+    bottom $bar-height - px(2)
+    .body-cont
+
+      .user-base-info
+        background-size cover
+        df-center()
+        flex-direction: column
+        height px(500)
+        width 100%
+        background-color  #f66
+        .user-avatar img
+          display inline-block
+          width px(188)
+          height px(188)
+          border-radius 50%
+          box-shadow 0 0 px(10) rgba(0,0,0,.5)
+
+      .login-text
+        display block
+        font-size px(32)
+        box-sizing border-box
+        height px(74)
+        width px(560)
+        line-height px(74)
+        border-radius px(6)
+        padding 0 px(20)
+        margin px(40) auto 0
+
+      .edit-submit
+        display block
+        font-size px(32)
+        height px(72)
+        color #fff
+        background-color #38f
+        border-radius px(4)
+        padding 0 px(60)
+        margin px(60) auto
+
+      .distory
+        margin-top px(36)
+        padding px(16) px(44)
+        border-radius px(4)
+        font-size px(32)
+        background-color #fff

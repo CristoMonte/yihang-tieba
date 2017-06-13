@@ -1,0 +1,27 @@
+@import "../../common/style/mixin.styl"
+@import "../../common/style/variables.styl"
+
+// 定义 或 重载 变量
+
+.a-message-box
+  posf-full()
+  z-index $a-message-box-z
+  overflow hidden
+  background-color rgba(7,17,27,.9)
+  .message-wrapper
+    margin px(160) auto 0
+    padding px(30) px(40)
+    width px(560)
+    min-height px(300)
+    max-height px(1280)
+    border-radius px(8)
+    display flex
+    justify-content center
+    align-items center
+    align-content center
+    font-size px(32)
+    line-height 1.4
+    color #38f
+    background-color #fff
+    .message-cont
+      white-space pre-wrap

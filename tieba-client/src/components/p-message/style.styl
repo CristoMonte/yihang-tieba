@@ -1,0 +1,75 @@
+@import "../../common/style/mixin.styl"
+@import "../../common/style/variables.styl"
+
+// 定义 或 重载 变量
+$msg-grey = $font-grey  // 灰色
+$msg-box-height = $header-height  // 头部高度
+$msg-page-padding = $page-padding  // 页面左右内边距
+$msg-header-font-size = $header-font-size // 头部字体大小
+$msg-bg-white = $bar-white  // 头部背景色
+
+.p-message
+  posf-full()
+  z-index $p-message-z
+  overflow hidden
+  .message-top-bar
+    height $msg-box-height
+    width 100%
+    box-sizing border-box
+    padding 0 $msg-page-padding
+    background-color $msg-bg-white
+    display flex
+    justify-content space-between
+    align-items center
+    z-index 100
+    posf-top-full()
+    .message-top-title
+      flex 1
+      font-size $msg-header-font-size
+      margin-left px(18)
+  .body-wrapper
+    position absolute
+    left 0
+    right 0
+    top $msg-box-height
+    bottom $bar-height - px(1)
+    .body-cont
+      .msg-item
+        width 100%
+        box-sizing border-box
+        padding px(18) px(26)
+        background-color #fff
+        display flex
+        .msg-icon
+          display inline-block
+          margin-right px(24)
+          width px(104)
+          height px(104)
+          line-height px(104)
+          border-radius 50%
+          text-align center
+          font-size px(50)
+          color #fff
+        .msg-cont
+          flex 1
+          display flex
+          align-content center
+          flex-wrap wrap
+          .msg-head
+            width 100%
+            display flex
+            .msg-title
+              flex 1
+              font-size px(32)
+              font-weight 500
+            .msg-time
+              color $msg-grey
+              font-size px(28)
+          .msg-text
+            margin-top px(20)
+            width 18em
+            font-size px(28)
+            color $msg-grey
+            overflow hidden
+            text-overflow ellipsis
+            white-space nowrap
